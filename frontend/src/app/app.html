@@ -1,0 +1,31 @@
+<div class="app-bg">
+  <video
+    #bgVideo
+    class="bg-video"
+    autoplay
+    loop
+    muted
+    [muted]="true"
+    playsinline
+    preload="auto"
+    (canplay)="onVideoReady(bgVideo)">
+    <source [src]="videoPath" type="video/webm">
+  </video>
+</div>
+
+<tui-root tuiTheme="dark">
+
+  <div class="layout-container">
+    <app-sidebar></app-sidebar>
+
+    <div class="main-wrapper">
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+
+      <footer class="footer tui-space_top-10">
+        <p>&copy; 2026 Electronic System - Gestión de Componentes</p>
+      </footer>
+    </div>
+  </div>
+</tui-root>

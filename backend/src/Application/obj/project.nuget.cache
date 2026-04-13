@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "39JKR5Yhxe8=",
+  "success": true,
+  "projectFilePath": "F:\\Projects\\Electronic System\\backend\\src\\Application\\ElectronicSystem.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sheo\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\Sheo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
+    "C:\\Users\\Sheo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\Sheo\\.nuget\\packages\\riok.mapperly\\4.3.1\\riok.mapperly.4.3.1.nupkg.sha512"
+  ],
+  "logs": []
+}

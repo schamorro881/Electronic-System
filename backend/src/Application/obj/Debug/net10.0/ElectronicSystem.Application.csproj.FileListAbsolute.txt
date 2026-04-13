@@ -1,0 +1,15 @@
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\ElectronicSystem.Application.csproj.AssemblyReference.cache
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\ElectronicSystem.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\ElectronicSystem.Application.AssemblyInfoInputs.cache
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\ElectronicSystem.Application.AssemblyInfo.cs
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\ElectronicSystem.Application.csproj.CoreCompileInputs.cache
+F:\Projects\Electronic System\backend\src\Application\bin\Debug\net10.0\ElectronicSystem.Application.deps.json
+F:\Projects\Electronic System\backend\src\Application\bin\Debug\net10.0\ElectronicSystem.Application.dll
+F:\Projects\Electronic System\backend\src\Application\bin\Debug\net10.0\ElectronicSystem.Application.pdb
+F:\Projects\Electronic System\backend\src\Application\bin\Debug\net10.0\ElectronicSystem.Domain.dll
+F:\Projects\Electronic System\backend\src\Application\bin\Debug\net10.0\ElectronicSystem.Domain.pdb
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\Electron.12975FC8.Up2Date
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\ElectronicSystem.Application.dll
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\refint\ElectronicSystem.Application.dll
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\ElectronicSystem.Application.pdb
+F:\Projects\Electronic System\backend\src\Application\obj\Debug\net10.0\ref\ElectronicSystem.Application.dll

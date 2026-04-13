@@ -1,0 +1,135 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TuiHeader } from '@taiga-ui/layout';
+import { TuiBadge } from '@taiga-ui/kit';
+
+@Component({
+  selector: 'app-componente-detail',
+  standalone: true,
+  imports: [
+    CommonModule,
+    TuiHeader,
+    TuiBadge
+  ],
+  template: `
+    <div class="container tui-container">
+      <header class="detail-header tui-space_bottom-10">
+        <div class="title-section">
+          <div class="flex-row">
+            <h1 class="tui-text_h3 text-gradient">NE555P</h1>
+            <div tuiBadge appearance="success" class="stock-badge">DISPONIBLE</div>
+          </div>
+          <p class="reference">Serie: IC-TIMERS-555 | ID: #992834</p>
+        </div>
+      </header>
+
+      <div class="main-layout">
+        <div class="content-side">
+          <div class="info-surface glass-light tui-space_bottom-8">
+            <h4 class="section-title">Descripción</h4>
+            <p class="tui-space_top-4 body-text">
+              El temporizador IC 555 es un circuito integrado de alta precisión que puede producir retardos de tiempo u oscilación controlados. 
+              En el modo de retardo de tiempo u operación monoestable, el intervalo de tiempo es controlado por una red externa de resistencia y condensador.
+            </p>
+          </div>
+
+          <div class="info-surface glass-light">
+            <h4 class="section-title">Ficha Técnica</h4>
+            <div class="specs-grid tui-space_top-6">
+               <div class="spec-item">
+                  <span class="spec-label">Voltaje Vcc</span>
+                  <span class="spec-value">4.5V - 16V</span>
+               </div>
+               <div class="spec-item">
+                  <span class="spec-label">Corriente de Salida</span>
+                  <span class="spec-value">200 mA (Max)</span>
+               </div>
+               <div class="spec-item">
+                  <span class="spec-label">Temperatura Op.</span>
+                  <span class="spec-value">0°C a 70°C</span>
+               </div>
+               <div class="spec-item">
+                  <span class="spec-label">Encapsulado</span>
+                  <span class="spec-value">PDIP-8</span>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-side">
+           <div class="info-surface glass tui-space_bottom-6">
+              <h4 class="section-title">Clasificación</h4>
+              <div class="tag-cloud tui-space_top-4">
+                 <div tuiBadge appearance="info" class="premium-badge">OSCILADOR</div>
+                 <div tuiBadge appearance="info" class="premium-badge">TIMER</div>
+                 <div tuiBadge appearance="info" class="premium-badge">ANALOG</div>
+              </div>
+           </div>
+
+           <div class="info-surface glass-light">
+              <h4 class="section-title">Fabricante</h4>
+              <p class="tui-space_top-4">Texas Instruments</p>
+           </div>
+        </div>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .container { max-width: 1100px; margin: 0 auto; padding-top: 2rem; }
+    
+    .flex-row { display: flex; align-items: center; gap: 1.5rem; }
+
+    .reference { color: var(--tui-text-02); font-size: 0.9rem; margin-top: 0.5rem; }
+
+    .main-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; }
+
+    .info-surface {
+      padding: 2.5rem;
+      border-radius: 28px;
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .body-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .spec-label { font-size: 0.8rem; color: var(--tui-text-02); }
+    .spec-value { font-size: 1.1rem; font-weight: 600; }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    .premium-badge {
+      background: rgba(99, 102, 241, 0.1);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .stock-badge {
+      background: rgba(34, 197, 94, 0.1);
+      color: #4ade80;
+      font-weight: 700;
+    }
+  `]
+})
+export class ComponenteDetailComponent {}

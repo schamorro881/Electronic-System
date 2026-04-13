@@ -1,0 +1,141 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TuiCard } from '@taiga-ui/layout';
+
+@Component({
+  selector: 'app-resistencias-buscador',
+  standalone: true,
+  imports: [CommonModule, TuiCard],
+  template: `
+    <div class="main-container">
+      <header class="page-header tui-space_bottom-12">
+        <h1 class="tui-text_h3 text-gradient">Identificador de Resistencias</h1>
+        <p class="tui-text_body-m sub-text">Traducción visual de códigos de colores a valores óhmicos.</p>
+      </header>
+
+      <!-- Resistor Visualizer -->
+      <div class="viz-surface glass tui-space_bottom-12">
+        <div class="resistor-canvas">
+          <div class="resistor-body">
+            <div class="band band-1" style="background: brown"></div>
+            <div class="band band-2" style="background: black"></div>
+            <div class="band band-3" style="background: red"></div>
+            <div class="band spacer-band"></div>
+            <div class="band band-4" style="background: gold"></div>
+          </div>
+        </div>
+        
+        <div class="value-display tui-space_top-10">
+          <div class="value-main">1,000 Ω</div>
+          <div class="value-extra">1 kΩ ±5%</div>
+        </div>
+      </div>
+
+      <!-- Control Panel -->
+      <div class="controls-grid">
+         <div class="control-card glass-light" *ngFor="let band of ['Banda 1', 'Banda 2', 'Multiplicador', 'Tolerancia']">
+            <span class="band-label">{{band}}</span>
+            <div class="color-options tui-space_top-4">
+               <div class="color-swatch" style="background: brown" title="Marrón"></div>
+               <div class="color-swatch active" style="background: black" title="Negro"></div>
+               <div class="color-swatch" style="background: red" title="Rojo"></div>
+               <div class="color-swatch" style="background: gold" title="Oro"></div>
+            </div>
+         </div>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .main-container { max-width: 900px; margin: 0 auto; padding-top: 2rem; }
+    
+    .sub-text { color: var(--tui-text-02); }
+
+    .viz-surface {
+      padding: 4rem 2rem;
+      border-radius: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .resistor-canvas {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .resistor-body {
+      width: 360px;
+      height: 50px;
+      background: #e1c19b;
+      border-radius: 25px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 50px;
+      box-shadow: inset 0 -4px 10px rgba(0,0,0,0.1), 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .resistor-body::before, .resistor-body::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background: #475569;
+      z-index: -1;
+    }
+    .resistor-body::before { left: -80px; }
+    .resistor-body::after { right: -80px; }
+
+    .band {
+      width: 14px;
+      height: 100%;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    .spacer-band { width: 40px; opacity: 0; }
+
+    .value-display { text-align: center; }
+    .value-main { font-size: 3rem; font-weight: 800; color: #fff; line-height: 1; }
+    .value-extra { font-size: 1.25rem; color: #6366f1; font-weight: 600; margin-top: 0.5rem; }
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .control-card {
+      padding: 1.5rem;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .band-label { font-size: 0.75rem; font-weight: 800; color: rgba(255, 255, 255, 0.3); text-transform: uppercase; }
+
+    .color-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .color-swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s;
+    }
+
+    .color-swatch:hover { transform: scale(1.2); border-color: #6366f1; }
+    .color-swatch.active { transform: scale(1.1); border-color: #fff; box-shadow: 0 0 15px rgba(99, 102, 241, 0.4); }
+  `]
+})
+export class ResistenciasBuscadorComponent {}
+旋

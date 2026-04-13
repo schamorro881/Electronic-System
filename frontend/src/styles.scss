@@ -1,0 +1,160 @@
+/* 
+  Electronic System - Premium UI v2 
+  Theme: Deep Midnight & Glassmorphism
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --tui-primary: #6366f1;
+  --tui-primary-hover: #4f46e5;
+  --tui-base-01: #0a1628;
+  --tui-base-02: rgba(30, 41, 59, 0.4);
+  --tui-border-normal: rgba(255, 255, 255, 0.08);
+  --tui-text-01: #f8fafc;
+  --tui-text-02: #94a3b8;
+
+  /* Dual-accent palette */
+  --indigo: #818cf8;
+  --indigo-glow: rgba(99, 102, 241, 0.3);
+  --cyan: #22d3ee;
+  --cyan-glow: rgba(34, 211, 238, 0.25);
+
+  /* Layout Variables */
+  --sidebar-width: 280px;
+}
+
+:root.sidebar-collapsed {
+  --sidebar-width: 88px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--tui-base-01);
+  color: var(--tui-text-01);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, label {
+  cursor: default;
+}
+
+input, textarea {
+  cursor: text;
+}
+
+/* Video Shader Background */
+.app-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: var(--tui-base-01);
+  overflow: hidden;
+
+  /* Dark overlay for readability */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 22, 40, 0.72);
+    pointer-events: none;
+  }
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(8, 14, 32, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.glass-light {
+  background: rgba(12, 20, 44, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(34, 211, 238, 0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Layout Container */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1; /* This pushes the footer down */
+}
+
+.footer {
+  padding-top: 3rem;
+  border-top: 1px solid rgba(99, 102, 241, 0.15);
+  color: #64748b;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-animate {
+  background: linear-gradient(-45deg, #fff, #818cf8, #22d3ee, #818cf8);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+}

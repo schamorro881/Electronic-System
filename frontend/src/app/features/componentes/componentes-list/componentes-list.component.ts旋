@@ -1,0 +1,144 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { TuiCard } from '@taiga-ui/layout';
+import { TuiButton, TuiTextfield } from '@taiga-ui/core';
+
+@Component({
+  selector: 'app-componentes-list',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    TuiCard,
+    TuiButton,
+    TuiTextfield
+  ],
+  template: `
+    <div class="container overflow-hidden">
+      <header class="page-header tui-space_bottom-10">
+        <h1 class="tui-text_h3 text-gradient">Catálogo de Componentes</h1>
+        <p class="tui-text_body-m sub-text">Explora nuestra base de datos Maestra de hardware electrónico.</p>
+      </header>
+
+      <div class="search-section glass-light tui-space_bottom-10">
+        <tui-textfield appearance="flat" class="search-field">
+          <input
+            tuiTextfield
+            [formControl]="searchControl"
+            placeholder="Filtrar por nombre, categoría o referencia..."
+          />
+          <span class="search-icon">🔍</span>
+        </tui-textfield>
+      </div>
+
+      <div class="grid">
+        <div class="comp-card glass-light" *ngFor="let item of [1,2,3,4,5,6]">
+          <div class="card-header">
+            <div class="type-badge">IC</div>
+            <h3 class="tui-text_h6 card-title">NE555P</h3>
+          </div>
+          
+          <p class="tui-space_vertical-4 card-desc">
+            Temporizador de precisión altamente versátil para generar pulsos u oscilaciones.
+          </p>
+          
+          <div class="card-meta">
+            <span class="meta-tag">Encapsulado: DIP-8</span>
+          </div>
+
+          <div class="card-actions tui-space_top-6">
+            <button 
+              tuiButton 
+              type="button" 
+              size="s" 
+              appearance="secondary"
+              class="details-btn"
+              routerLink="/componentes/1"
+            >
+              Ficha Técnica
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .container { max-width: 1200px; margin: 0 auto; padding-top: 1rem; }
+    
+    .sub-text { color: var(--tui-text-02); }
+
+    .search-section {
+      padding: 1.5rem;
+      border-radius: 20px;
+    }
+
+    .search-field {
+      --tui-base-02: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .comp-card {
+      padding: 2rem;
+      border-radius: 24px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .comp-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-8px);
+      border-color: rgba(99, 102, 241, 0.2);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .type-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      background: rgba(99, 102, 241, 0.1);
+      color: #818cf8;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .card-title { font-weight: 700; margin: 0; }
+    
+    .card-desc { 
+      color: var(--tui-text-02); 
+      font-size: 0.9rem;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .card-actions {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 1.25rem;
+    }
+
+    .details-btn { width: 100%; border-radius: 10px; }
+  `]
+})
+export class ComponentesListComponent {
+  searchControl = new FormControl('');
+}
+旋

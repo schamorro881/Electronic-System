@@ -1,0 +1,11 @@
+F:\Projects\Electronic System\backend\src\Domain\bin\Debug\net10.0\ElectronicSystem.Domain.deps.json
+F:\Projects\Electronic System\backend\src\Domain\bin\Debug\net10.0\ElectronicSystem.Domain.dll
+F:\Projects\Electronic System\backend\src\Domain\bin\Debug\net10.0\ElectronicSystem.Domain.pdb
+F:\Projects\Electronic System\backend\src\Domain\obj\Debug\net10.0\ElectronicSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Electronic System\backend\src\Domain\obj\Debug\net10.0\ElectronicSystem.Domain.AssemblyInfoInputs.cache
+F:\Projects\Electronic System\backend\src\Domain\obj\Debug\net10.0\ElectronicSystem.Domain.AssemblyInfo.cs
+F:\Projects\Electronic System\backend\src\Domain\obj\Debug\net10.0\ElectronicSystem.Domain.csproj.CoreCompileInputs.cache
+F:\Projects\Electronic System\backend\src\Domain\obj\Debug\net10.0\ElectronicSystem.Domain.dll
+F:\Projects\Electronic System\backend\src\Domain\obj\Debug\net10.0\refint\ElectronicSystem.Domain.dll
+F:\Projects\Electronic System\backend\src\Domain\obj\Debug\net10.0\ElectronicSystem.Domain.pdb
+F:\Projects\Electronic System\backend\src\Domain\obj\Debug\net10.0\ref\ElectronicSystem.Domain.dll
