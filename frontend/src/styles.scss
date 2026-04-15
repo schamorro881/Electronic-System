@@ -52,9 +52,10 @@ input, textarea {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  z-index: 0;
   background-color: var(--tui-base-01);
   overflow: hidden;
+  pointer-events: none;
 
   /* Dark overlay for readability */
   &::after {
@@ -100,6 +101,8 @@ input, textarea {
 .layout-container {
   display: flex;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 .main-wrapper {
@@ -157,4 +160,61 @@ h1, h2, h3, h4 {
   z-index: 9999;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   opacity: 0.05;
+}
+
+/* Mobile Topbar */
+.mobile-topbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 90;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-title {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* Mobile Breakpoint Modifications */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 0px !important;
+  }
+  
+  .layout-container {
+    flex-direction: column;
+  }
+
+  .mobile-topbar {
+    display: flex;
+  }
+
+  .main-wrapper {
+    margin-left: 0;
+    padding: 1.25rem;
+    padding-top: calc(60px + 1.25rem); /* Space for mobile topbar */
+  }
+
+  .footer {
+    padding-top: 2rem;
+  }
 }

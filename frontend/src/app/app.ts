@@ -11,9 +11,10 @@ import { LayoutService } from './core/services/layout.service';
   templateUrl: './app.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class App {
-  private layoutService = inject(LayoutService);
-  videoPath = '/assets/animations/shader-recording.webm';
+export class App implements AfterViewInit {
+  layoutService = inject(LayoutService);
+  
+  @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
 
   constructor() {
     // Sync collapsed state with a class on the :root element for global CSS variables
@@ -26,7 +27,17 @@ export class App {
     });
   }
 
+  ngAfterViewInit() {
+    if (this.bgVideo?.nativeElement) {
+      this.playVideo(this.bgVideo.nativeElement);
+    }
+  }
+
   onVideoReady(video: HTMLVideoElement) {
+    this.playVideo(video);
+  }
+
+  private playVideo(video: HTMLVideoElement) {
     video.muted = true;
     const playPromise = video.play();
     

@@ -32,4 +32,24 @@ public sealed class OhmCalculatorController(IOhmCalculatorService ohmCalculatorS
             return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Error interno al realizar el cálculo.", details = ex.Message });
         }
     }
+
+    [HttpPost("calculate-led")]
+    [ProducesResponseType(typeof(OhmCalculationResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<OhmCalculationResponse>> CalculateLed([FromBody] LedCalculationRequest request)
+    {
+        try
+        {
+            var result = await ohmCalculatorService.CalculateLedAsync(request);
+            return Ok(result);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Error interno al realizar el cálculo.", details = ex.Message });
+        }
+    }
 }

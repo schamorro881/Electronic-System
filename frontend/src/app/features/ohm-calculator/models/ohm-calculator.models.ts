@@ -1,7 +1,14 @@
-﻿export interface OhmCalculationRequest {
-  voltage: number | null;
-  current: number | null;
-  resistance: number | null;
+export interface OhmCalculationRequest {
+  voltage: string | null;
+  current: string | null;
+  resistance: string | null;
+  power: string | null;
+}
+
+export interface LedCalculationRequest {
+  sourceVoltage: string | null;
+  ledForwardVoltage: string | null;
+  ledForwardCurrent: string | null;
 }
 
 export interface OhmCalculationResponse {
@@ -10,4 +17,6 @@ export interface OhmCalculationResponse {
   resistance: number;
   power: number;
   formulaApplied: string;
+  safetyAdvice: string;
+  componentRecommendation: string;
 }

@@ -1,8 +1,9 @@
-﻿namespace ElectronicSystem.Application.DTOs.OhmCalculator;
+namespace ElectronicSystem.Application.DTOs.OhmCalculator;
 
 public class OhmCalculationRequest
 {
-    public double? Voltage { get; set; }
-    public double? Current { get; set; }
-    public double? Resistance { get; set; }
+    public string? Voltage { get; set; }
+    public string? Current { get; set; }
+    public string? Resistance { get; set; }
+    public string? Power { get; set; }
 }

@@ -204,6 +204,29 @@ import { TuiLink } from '@taiga-ui/core';
       padding-top: 1.5rem;
       border-top: 1px solid rgba(34, 211, 238, 0.15);
     }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding-bottom: 2rem;
+        gap: 0;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      .hero-illustration {
+        max-width: 280px;
+        margin-top: 1.5rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
   `]
 })
 export class HomeComponent {}

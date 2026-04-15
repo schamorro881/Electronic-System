@@ -1,3 +1,4 @@
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideTaiga } from '@taiga-ui/core';
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';

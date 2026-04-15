@@ -48,6 +48,28 @@ public sealed class ResistenciasController(IResistenciaService resistenciaServic
         return Ok(result);
     }
 
+    [HttpPost("calculate-color")]
+    [AllowAnonymous]
+    [ProducesResponseType(typeof(ColorCodeCalculationResponse), StatusCodes.Status200OK)]
+    public async Task<ActionResult<ColorCodeCalculationResponse>> CalculateColorCode(
+        [FromBody] ColorCodeCalculationRequest request,
+        CancellationToken ct)
+    {
+        var result = await resistenciaService.CalculateColorCodeAsync(request, ct);
+        return Ok(result);
+    }
+
+    [HttpPost("reverse-calculate")]
+    [AllowAnonymous]
+    [ProducesResponseType(typeof(ReverseCalculationResponse), StatusCodes.Status200OK)]
+    public async Task<ActionResult<ReverseCalculationResponse>> ReverseCalculateColorCode(
+        [FromBody] ReverseCalculationRequest request,
+        CancellationToken ct)
+    {
+        var result = await resistenciaService.ReverseCalculateColorCodeAsync(request, ct);
+        return Ok(result);
+    }
+
     [HttpPost]
     [Authorize(Roles = "Admin")]
     [ProducesResponseType(typeof(ResistenciaResponse), StatusCodes.Status201Created)]
