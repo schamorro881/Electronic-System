@@ -79,7 +79,8 @@ dotnet run --project src/Api   # Inicializa el servidor API (usualmente http://l
 ## 📐 Diseño Base y Estructura
 El proyecto ha sido estructurado meticulosamente manteniendo un grado muy alto de desacoplamiento:
 - **Angular:** Usa *Feature Modules/Standalone Components*, servicios (servicios inyectables para abstraer lógica) e interfaces estrictas de TypeScript.
-- **Estética:** Se eliminaron las interfaces crudas estándar en favor de Taiga UI y CSS puro enfocado en fondos vibrantes difusos, superposiciones oscuras tipo cristal con bordes semi transparentes y gradientes sutiles.
+- **Estética y UI/UX:** Se eliminaron las interfaces crudas estándar en favor de Taiga UI y CSS puro enfocado en fondos vibrantes difusos, superposiciones oscuras tipo cristal con bordes semi transparentes y gradientes sutiles. Se implementaron interacciones de alta gama como *3D-tilt hover effects*, vistas rápidas (drawers) e ilustraciones con física visual.
+- **Responsividad Total (Mobile-Ready):** La aplicación ha sido adaptada integralmente para dispositivos móviles. En pantallas pequeñas, el _Sidebar_ se convierte inteligentemente en un **menú retráctil estilo hamburguesa (off-canvas)**, las grillas de contenido fluyen con Flexbox/Grid apilándose perfectamente, e incluso implementaciones complejas como la simulación virtual interactiva de las bandas de resistencias y los SVG calculados en tiempo real se auto-escalan utilizando transformaciones matemáticas precisas para evitar bordes cortados o desbordes en celulares estrechos (resoluciones de 320px).
 - **Clean Architecture:** El backend ha sido instanciado con `Api`, `Application`, `Domain`, e `Infrastructure` preparando el sistema para poder soportar inyección de dependencias (CQRS) en el futuro sólido y a prueba de escalamiento.
 
 ---
